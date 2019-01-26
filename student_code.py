@@ -23,8 +23,12 @@ class KnowledgeBase(object):
         Args:
             fact (Fact or Rule): Fact or Rule we're asserting in the format produced by read.py
         """
-        if isinstance(fact, Fact) or isinstance(fact, Rule):
+        if isinstance(fact, Fact):
             self.facts.append(fact)
+    
+        if isinstance(fact, Rule):
+            self.rules.append(fact)
+            
             
         print("Asserting {!r}".format(fact))
         
